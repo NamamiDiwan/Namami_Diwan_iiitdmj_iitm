@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "author": "Embedded C ES",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 77.4, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -22.8, "left": 99.8, "attrs": {} },
+    { "type": "wokwi-logic-analyzer", "id": "logic1", "top": 29.15, "left": 278.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "led1:C", "uno:GND.1", "green", [ "v0" ] ],
+    [ "led1:A", "uno:13", "green", [ "v0" ] ],
+    [ "uno:12", "logic1:D1", "orange", [ "v0" ] ],
+    [ "uno:13", "logic1:D0", "violet", [ "v-48", "h182.8" ] ]
+  ],
+  "dependencies": {}
+}

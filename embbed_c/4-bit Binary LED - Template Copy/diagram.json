@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Embedded C ES",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-st-nucleo-c031c6", "id": "nucleo", "top": 0.83, "left": -48.98, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 82, "left": 250, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": 82, "left": 300, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led3", "top": 82, "left": 350, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led4", "top": 82, "left": 400, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "nucleo:PA3", "", [] ],
+    [ "$serialMonitor:RX", "nucleo:PA2", "", [] ],
+    [ "led1:A", "nucleo:D13", "green", [ "v0" ] ],
+    [ "led2:A", "nucleo:D12", "green", [ "v0" ] ],
+    [ "led3:A", "nucleo:D11", "green", [ "v0" ] ],
+    [ "led4:A", "nucleo:D10", "green", [ "v0" ] ],
+    [ "nucleo:GND.9", "led1:C", "black", [ "h0" ] ],
+    [ "nucleo:GND.9", "led2:C", "black", [ "h0" ] ],
+    [ "nucleo:GND.9", "led3:C", "black", [ "h0" ] ],
+    [ "nucleo:GND.9", "led4:C", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

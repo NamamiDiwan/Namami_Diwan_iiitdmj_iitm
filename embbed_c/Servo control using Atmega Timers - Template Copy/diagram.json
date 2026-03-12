@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "author": "Embedded C ES",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 77.4, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -173.8,
+      "left": -36.6,
+      "rotate": -90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": -173.8,
+      "left": 126.6,
+      "rotate": -90,
+      "attrs": {}
+    },
+    {
+      "type": "chip-scope",
+      "id": "scope1",
+      "top": 39.42,
+      "left": 292.8,
+      "attrs": {
+        "sampleTimeUs": "100",
+        "sampleTimeMs": "0",
+        "triggerChannel": "0",
+        "triggerMode": "1",
+        "crtColor": "0",
+        "trace0Color": "14",
+        "trace1Color": "12",
+        "trace2Color": "10",
+        "trace3Color": "2"
+      }
+    },
+    { "type": "wokwi-junction", "id": "j1", "top": 81.6, "left": -81.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "scope1:D0", "uno:11", "orange", [] ],
+    [ "uno:11", "servo1:PWM", "green", [ "v-96", "h-28.4" ] ],
+    [ "uno:3", "servo2:PWM", "green", [ "v0" ] ],
+    [ "uno:3", "scope1:D1", "violet", [ "v0" ] ],
+    [ "servo1:V+", "j1:J", "red", [ "v19.2", "h-67.1" ] ],
+    [ "servo2:V+", "j1:J", "red", [ "h0.1", "v38.4", "h-288" ] ],
+    [ "servo1:GND", "uno:GND.1", "black", [ "v67.2", "h18.9" ] ],
+    [ "servo2:GND", "uno:GND.1", "black", [ "v67.2", "h-86.4", "v48" ] ],
+    [ "j1:J", "uno:5V", "red", [ "v201.6", "h230.4" ] ]
+  ],
+  "dependencies": { "chip-scope": "github:Dlloydev/Wokwi-Chip-scope@1.0.7" }
+}
